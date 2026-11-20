@@ -1,0 +1,45 @@
+################################################
+"Computer Systems: A Programmer's Perspective"
+
+     Notes, musings, and useful commands
+
+################################################
+
+
+################################################
+    "Chapter 1: A Tour of Computer Systems"
+################################################
+
+  - C programs are stored as an "Executable Object Program", or "Executable Object Files"
+  - four phases to the compilation system:
+    * Preprocessor
+      - Reads the system header files and inserts them directly in, as well as directives
+      - Generally turns into a .i file (hello.i)
+    * Compiler
+      - Compiles hello.i into a .s file (hello.s)
+    * Assembler
+      - Turns hello.s into machine-language, called a "Relocatable Object Program", stored in a .o file (hello.o)
+    * Linker
+      - Merges the functions from other .h files into our program. creates the hello file (no extension), the final program!
+
+  - Buses carry information in fixed-sized chunks of bytes known as "Words". I've found Word size is *generally* the same as the bitrate, but not guaranteed.
+    Note: You can check your word size with WORD_SIZE in some of the /usr/include/<example,h> files.
+  - Devices connected to I/O buses via a controller or an adapter:
+    * Controller: Chip sets in the device itself, or on the system's motherboard
+    * Adapter: card that pugs into a slot on the mobo, generally pci-e
+
+  "Main Memory"
+  - temporary storage device that holds both a program and the data it manipulates; generally a collection of DRAM chips.
+  - Organized as linear arraya of bytes, each with an array index, starting from zero.
+
+  "CPU"
+  - Executes instructions stored in main memory.
+  - "Register": Word-size storage device in the CPU known as the "Program Counter (PC)".
+  - At any given time, PC points at machine-langauge instruction in main memory
+  - Executes instruction pointed at by the PC, then updates the PC to the next instruction
+  - "Register File": Storage device containing the full list of word-size registers, each with a unique name.
+  - "Arithmetic/Logic Unit (ALU)": computres new data and address values
+    * Simple instructions include Load, Store, Operate, Jump
+  - The processsor may take millions of times longer to read data from a hard disk than from memory
+  - The CPU can read data from the register up to 100x faster than memory(!) This "Processor-Memory Gap" continues to grow, as making CPUs faster is easier than making memory faster
+  - "ache": 
