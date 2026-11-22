@@ -2,7 +2,6 @@
 "Computer Systems: A Programmer's Perspective"
 
      Notes, musings, and useful commands
-
 ################################################
 
 
@@ -42,4 +41,29 @@
     * Simple instructions include Load, Store, Operate, Jump
   - The processsor may take millions of times longer to read data from a hard disk than from memory
   - The CPU can read data from the register up to 100x faster than memory(!) This "Processor-Memory Gap" continues to grow, as making CPUs faster is easier than making memory faster
-  - "ache": 
+  - "cache": temporary staging areas for info that the processor will likely need in the future
+    * L1 can be accessed almost as quickly as the register file; L2 is 5-10x slower, but still 5-10x faster than ram
+    * The newest hardware has L3 caches that can get quite large (64mb on AMD 9950X)
+    * Caches are created with "Static Random Access Memory (SRAM)"
+  - "Application Programmers who are aware of cache memories can exploit them to improve the performance of their programs by an order of magnitude"
+
+  "Processes"
+  - a "process" is an OS abstraction for a running program
+  - "concurrency": when the instruction of one process are interleaved with the instructions of another
+  - "Context switching" allows even a single-core CPU to handle multiple programs at once
+    * the context, aka the state info the process needs to run, is all saved, the context of the new process is restored, and vice versa
+  - the "kernel" is the portion of OS code that is always persistent in memory
+  - when application programs start or read/write a file, the kernel executes a special "system call" instruction, giving the kernel control
+
+  "Threads"
+  - "threads" are multiple execution units, each running in the context of the process and sharing the same code and data
+  - Used for concurrency, and by multi-core processors (which can generally handle twice as many threads as they have cores, via hyperthreading!)
+
+  "Virtual Memory"
+  - Provides every process with the illusion that is has exclusive use of the main memory
+  - This is called that program's "virtual address space" (listed in order of address number:
+    * "Program Code and Data:" code starts at the same fixed address for all processes, followed by data locations corresponding to global c variables
+    * "Heap": Expands and contracts dynamically as calls to malloc() and free() are made
+    * "Shared Libraries": Code for the C Standard Library (stdlib.h, math.h, etc); see Dynamic Linking (Chaper 7)
+    * "Stack": top of user address space. implements function calls in C and variables
+    * "Kernel Virtual Memory": reserved for kernel. "no user can read or write these contents directly, and must instead invoke the kernel to do so"

@@ -1,0 +1,102 @@
+Practice Problem 1.1 - CSAPP
+
+A truck driver carries a load 2,500km, from Boise to Minnneapolis. Averaging
+100km/hr, they estimate it will take 25 hours
+
+--------
+
+(A) Montana has abolished the speed limit, which constitutes 1,500kb of the
+trip. Your truck can travel 150km/hr. What will be your speedup for the trip?
+
+Answer: Your total speed up is 1.25x
+
+Work:
+  Amdahl's Law: S = 1 / ((1-a) + a/k)
+    a = .6
+    k =  150 / 100 = 1.5(x faster)
+   
+    S = 1 / ((1 - .6) + .6 / 1.5)
+    S = 1 / (.4 + .4)
+    S = 1 / .8
+    S = 1.25x
+  
+Sanity Check:
+ Old trip:
+   2500(km) / 100(km/h) = 25(hr)
+ New trip:
+   150(km/h) for 1500km
+   1500km / 150(km/hr) = 10(hr)
+
+   100(km/h) for 1000km
+   1000km / 100(km/hr) = 10(hr)
+
+   Total = 10 + 10 = 20(hr)
+
+ Told / Tnew = Performance Improvement
+   new total = 20hr
+   old total = 25hr
+
+   25 / 20 = 1.25 (x faster)
+
+ Thinking backwards:
+   25 * .8 = 20 (% less time)
+
+
+--------
+
+(B) You want to buy a new turbo. There are various models, but the faster they
+are, the more it will cost. How fast must you travel through Montana to get an
+overall speedup for your trip of 1.67x?
+
+Answer: You must travel through Montana at 300km/h to achieve a 1.67x overall
+        speedup
+
+Work:
+
+  Refactor Amdahl's Law to solve for K
+    S = 1 / ((1 - a) + a/k) 		# Multiply both sides by ((1 - a) + a/k)
+    S * ((1 - a) + a/k) = 1			# Divide both sides by S
+    ((1 - a) + a/k) = 1/S			# Subtract both sides by (1-a)
+    a/k = 1/S - (1 -a)				# Multiply both sides by k
+    a = 1/S - (1 -a) * k			
+    a / (1/S - (1 - a) = k
+
+    k = .6 / (1/1.67 - (1 - .6)
+    k = .6 / (.5988 - .4
+    k = .6 / .1988
+    k = 3.018
+
+    S = 1 / ((1 - a) + a/k)
+    S = 1 / (.4 + .6/3.018)
+    S = 1 / (.4 + .1988)
+    S = 1 / .5988
+    S = 1.67
+
+Sanity Checks:
+  Determine S raw:
+    1 / 1.67 = .598
+    .598 * 25 = 14.97 (Tnew, the target time)
+
+     = 25(h) / 14.97 = 1.67x (matches the original question)
+
+  Reverse Amdahl:
+    1.67 = 1 / ((1 - a) + a/k)
+      S = 1.67(x)
+      a = .6
+  
+    1.67 = 1 / ((1 - .6) + .6/k)
+    1.67 = 1 / (.4 + .6/k)  
+    1.67 = 1 / (.4 + .6/3)
+    1.67 = 1 / .4 + .2
+    1.67 = 1 / .6
+    1.67 = 1 / .6
+    1.67 = 1.67
+  
+    k = 3 = 3 * 100(km/h) = 300km(h)
+  
+  Sanity Check (Regular Amdahl):
+    S = 1 / ((1 - .6) + .6 / 3)
+    S = 1 / (.4 + .2)
+    S = 1 / .6
+    S = 1.67
+
