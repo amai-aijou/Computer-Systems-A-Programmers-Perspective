@@ -67,3 +67,18 @@
     * "Shared Libraries": Code for the C Standard Library (stdlib.h, math.h, etc); see Dynamic Linking (Chaper 7)
     * "Stack": top of user address space. implements function calls in C and variables
     * "Kernel Virtual Memory": reserved for kernel. "no user can read or write these contents directly, and must instead invoke the kernel to do so"
+
+  "Concurrency and Parallelism"
+  - "Concurrency" is when a system has multiple, simultaneous activities
+  - "Parallelism" is applied concurrency to increase speed
+
+    "Thread-level Concurrency"
+    - L1 and L2 are per-core, with a shared L3 cache
+    - Hyperthreading allows a CPU to make decisions based on availability. If task 1 needs to wait for something, it will choose to move task 2 forward
+
+    "Instruction-Level Parallelism"
+    - modern CPUs can execute multiple instructions at a time, with 2-4 instructions per clock cycle (probably higher today)
+    - A processor that can handle more than 1 instruction per cycle is known as a "superscalar processor"
+
+    "SIMD Parallelism"
+    - Allows for multiple instructions at the bit level, such as adding 8 pairs of floats in parallel. See SWAR from my notes on C Programming: A Modern Approach for an example
