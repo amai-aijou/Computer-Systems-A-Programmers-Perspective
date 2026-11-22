@@ -1,4 +1,6 @@
+############################
 Practice Problem 1.1 - CSAPP
+############################
 
 A truck driver carries a load 2,500km, from Boise to Minnneapolis. Averaging
 100km/hr, they estimate it will take 25 hours
@@ -11,7 +13,7 @@ trip. Your truck can travel 150km/hr. What will be your speedup for the trip?
 Answer: Your total speed up is 1.25x
 
 Work:
-  Amdahl's Law: S = 1 / ((1-a) + a/k)
+  Amdahl's Law: S = 1 / (( 1 - a) + a/k)
     a = .6
     k =  150 / 100 = 1.5(x faster)
    
@@ -58,11 +60,12 @@ Work:
     S * ((1 - a) + a/k) = 1			# Divide both sides by S
     ((1 - a) + a/k) = 1/S			# Subtract both sides by (1-a)
     a/k = 1/S - (1 -a)				# Multiply both sides by k
-    a = 1/S - (1 -a) * k			
-    a / (1/S - (1 - a) = k
+    a = 1/S - (1 -a) * k			# Divide both sides by (1/S - (1 - a)
+    a / (1/S - (1 - a)) = k			# flip it around for ease of use
+    k = a / (1/S - (1 - a))			# done!
 
     k = .6 / (1/1.67 - (1 - .6)
-    k = .6 / (.5988 - .4
+    k = .6 / (.5988 - .4)
     k = .6 / .1988
     k = 3.018
 
@@ -74,7 +77,10 @@ Work:
 
 Sanity Checks:
   Determine S raw:
+    Told / Tnew = percent time required for new
     1 / 1.67 = .598
+
+    Percent * Told = Tnew
     .598 * 25 = 14.97 (Tnew, the target time)
 
      = 25(h) / 14.97 = 1.67x (matches the original question)

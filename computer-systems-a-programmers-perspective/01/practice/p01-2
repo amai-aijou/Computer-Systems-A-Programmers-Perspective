@@ -1,0 +1,46 @@
+############################
+Practice Problem 1.2 - CSAPP
+############################
+
+A car company wants to improve their engine by 4x.
+Only 90% of the engine can be improved.
+How much would you need to improve that part to meet the target?
+
+-------------
+
+Answer:
+
+Work:
+
+  Told / Tnew
+  1 / 4
+  .25 * 1 = .25
+  S = 4
+
+  a = .9
+
+  k = a / (1/S - (1 - a)	# See p01-1 for refactor info
+
+  k = .9 / (1 / S - (1 - .9))
+  k = .9 / (1 / S - (1 - .9))
+  k = .9 / (1 / S - .1
+
+  k = .9 / (1 / 4 - (1 - .9))
+  k = .9 / (1 / 4 - (1 - .9))
+  k = .9 / (1 / 4 - .1)
+  k = .9 / (.25 - .1)
+  k = .9 / .15
+  k = 6
+
+
+Sanity Check:
+
+  S = 1 / ((1 - a) + a/k)
+
+  S = 1 / ((1 - .9) + .9 / 6)
+  S = 1 / ((.1) + .15)
+  S = 1 / .25
+  S = 4
+
+
+
