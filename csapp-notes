@@ -82,3 +82,27 @@
 
     "SIMD Parallelism"
     - Allows for multiple instructions at the bit level, such as adding 8 pairs of floats in parallel. See SWAR from my notes on C Programming: A Modern Approach for an example
+
+
+################################################
+                 "Chapter 2"
+  "Representing and Manipulating Information"
+################################################
+
+"2.1 - Information Storage"
+
+  "Hexadecimal Notation"
+  - Remember, since they are multiples of 16 (aka four binary bits), you  can "add" hex numbers together:
+
+    0x17 = 0001 + 0111 = 00010111 = 23 (1*16 + 7*1)
+
+  - You can convert from Hex back to Binary by splitting into groups of four bits the same way:
+
+    0011 1100 1010 1101 1011 0011
+     3    12   10   13   11   3
+     0    C    A    D    B    3   0xCADB3
+
+  - Remember, if there isn't a clean multiple of four, the padding goes on the left, always!
+
+    1111 0010 1011 0110 1100 11 # WRONG!
+    11 1100 1010 1101 1011 0011 # Correct 
