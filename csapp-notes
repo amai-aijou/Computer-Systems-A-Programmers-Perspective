@@ -106,3 +106,5 @@
 
     1111 0010 1011 0110 1100 11 # WRONG!
     11 1100 1010 1101 1011 0011 # Correct 
+
+  - You can convert from decimal to hex by dividing by 16, then taking the remainder as the least-significant digit, then repeating!
