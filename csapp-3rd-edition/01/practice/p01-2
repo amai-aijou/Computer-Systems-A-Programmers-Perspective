@@ -1,14 +1,25 @@
-############################
-Practice Problem 1.2 - CSAPP
-############################
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p01-2 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Tue Nov 21 07:03:36 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 
-A car company wants to improve their engine by 4x.
-Only 90% of the engine can be improved.
-How much would you need to improve that part to meet the target?
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 1.2"
 
--------------
+    A car company wants to improve their engine by 4x.
+    Only 90% of the engine can be improved.
+    How much would you need to improve that part to meet the target?
 
-Answer:
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+###############
+   "Answers"
+###############
+
+Answer: They will need to improve that part by 6x
 
 Work:
 

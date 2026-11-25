@@ -1,6 +1,31 @@
-############################
-Practice Problem 1.1 - CSAPP
-############################
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-4 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Tue Nov 21 07:03:36 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 1.1"
+  
+    A truck driver carries a load 2,500km, from Boise to Minnneapolis. Averaging
+    100km/hr, they estimate it will take 25 hours.
+    
+    --------
+    
+    (A) Montana has abolished the speed limit, which constitutes 1,500kb of the
+    trip. Your truck can travel 150km/hr. What will be your speedup for the trip?
+    
+    (B) You want to buy a new turbo. There are various models, but the faster they
+    are, the more it will cost. How fast must you travel through Montana to get an
+    overall speedup for your trip of 1.67x?
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+###############
+   "Answers"
+###############
 
 A truck driver carries a load 2,500km, from Boise to Minnneapolis. Averaging
 100km/hr, they estimate it will take 25 hours
