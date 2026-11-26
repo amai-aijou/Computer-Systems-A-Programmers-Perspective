@@ -91,7 +91,7 @@
 
 "2.1 - Information Storage"
 
-  "Hexadecimal Notation"
+  "2.1.1 Hexadecimal Notation"
   - Remember, since they are multiples of 16 (aka four binary bits), you  can "add" hex numbers together:
 
     0x17 = 0001 + 0111 = 00010111 = 23 (1*16 + 7*1)
@@ -108,3 +108,12 @@
     11 1100 1010 1101 1011 0011 # Correct 
 
   - You can convert from decimal to hex by dividing by 16, then taking the remainder as the least-significant digit, then repeating!
+
+  "2.1.2 Data Sizes"
+  - "word size" indicates the nominal size of pointer data. for a machine with w-bit word size, virtual addresses range from 0 to (2**w) - 1, giving access to 2**w bytes
+  - word size is *basically* an extension of the bitrate for a computer. 32-bit PCs are 32-bit word size, 64-bit are 64-bit word size (GENERALLY, not sure if that's a strict rule)
+  - char* use the full word size of a program, so 64 bits in an x86-64 program
+
+  "2.1.3 Addressing and Byte Ordering"
+  - "Big-Endian" and "Little-Endian"  are not fully backwards; instead, "the bytes themselves are switched", meaning within the byte, it still reads 01234567, not 76543210!
+  - Due to endian-ness, abusing casts and unions in C are highly discouraged in application programming, but are highly useful in systems programming

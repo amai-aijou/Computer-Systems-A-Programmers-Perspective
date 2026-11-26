@@ -1,0 +1,32 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-5 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Wed Nov 25 10:26:13 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 2.5"
+    For these three calls to show_bytes, indicate the values printed by each call
+    on Big- and Little-endian machines
+   
+    int val = 0x87654321;
+    byte_pointer valp = (byte_pointer) &val;
+
+    show_bytes(valp, 1); // A.
+    show_bytes(valp, 2); // B.
+    show_bytes(valp, 3); // C.
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+###############
+   "Answers"  
+###############
+
+A. Little Endian: 21   		 Big Endian: 87
+A. Little Endian: 21 43  	 Big Endian: 87 65
+A. Little Endian: 21 43 65   Big Endian: 87 65 43
+
+
+Complete Int  (Little): 21 43 65 87
+Complete Int (Big-end): 87 65 43 21
