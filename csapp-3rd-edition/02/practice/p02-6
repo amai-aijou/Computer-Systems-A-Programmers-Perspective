@@ -1,0 +1,59 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-6 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Thu Nov 26 12:45:56 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 2.6"
+    When converting an integer 3510593 over to float, the hex representation changed.
+
+               Dec         Hex 
+               ---         ---
+    Integer: 3510593	0x00359141
+      Float: 3510593.0	0x4A564504
+
+    A. Convert the two hex values to binary
+    B. Shift the strings so as many bits as possible match. How many do?
+    C. Which parts of the bit strings are not matching?
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+
+#################
+# ┏━━━━━━━━━━━┓ #
+    "Answers"
+# ┗━━━━━━━━━━━┛ #
+# ###############
+
+A. 
+           Dec       	  Hex        	  Bin 
+           ---       	  ---        	  --- 
+Integer: 3510593	0x00359141 		0000 0000 0011 0101 1001 0001 0100 0001
+  Float: 3510593.0	0x4A564504      0100 1010 0101 0110 0100 0101 0000 0100
+
+#################
+
+B.
+Note: Remove all the spaces! Otherwise you are only trying to match hex pairs, which won't work
+
+Int:     00000000001101011001000101000001
+Float:   01001010010101100100010100000100
+
+Int:     		00000000001101011001000101000001
+Float >> 2:     00010010100101011001000101000001
+                           *********************
+                           123456789012345678901
+Answer: 21 bits shared
+
+#################
+
+C. 
+
+Int:     		00000000001101011001000101000001
+Float >> 2:     00010010100101011001000101000001
+                   *******
+
+What appears to be a Sign bit at the top of the Integer does not match.
+Also, the exponent section of the float does not (not sure why they didn't teach the float composition first)
