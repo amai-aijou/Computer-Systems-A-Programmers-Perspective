@@ -11,6 +11,7 @@
   ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛*/
 
 #include <stdio.h>
+#include <string.h>
 
 typedef unsigned char *byte_pointer;
 
@@ -29,6 +30,8 @@ void test_show_bytes(int val);
 int main(void) {
 
 	int val = 0x87654321;
+    const char *s = "abcdef"; 	// Practice problem 2-7
+
 	byte_pointer valp = (byte_pointer) &val;
 
 	printf("show_bytes(ap, 1): ");
@@ -46,6 +49,9 @@ int main(void) {
 	printf("test_show_bytes(val):\n");
 	test_show_bytes(val);
 	printf("\n");
+
+	// Practice_problem 2-7
+    show_bytes((byte_pointer) s, strlen(s));
 }
 
 /*┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓

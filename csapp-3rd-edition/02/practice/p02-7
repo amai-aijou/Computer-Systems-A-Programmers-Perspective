@@ -1,0 +1,26 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-7 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Thu Nov 26 06:21:38 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 2.7"
+    What would this call print? (see show_bytes.c in /01)
+
+    const char *s = "abcdef";
+    show_bytes((byte_pointer) s, strlen(s));
+
+    Note: ASCII codes 0x61 - 0x7A are used for a-z in hex
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+###############
+   "Answers"
+###############
+
+For "abcdef" it will output the six characters only
+#strlen() doesn't count the 0!
+
+61 62 63 64 65 66
