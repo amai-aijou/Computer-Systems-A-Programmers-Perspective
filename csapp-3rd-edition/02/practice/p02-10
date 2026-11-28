@@ -1,0 +1,72 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-10 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Fri Nov 27 06:18:18 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 2.10"
+    Hint: Remember that a ^ a = 0
+
+    void inplace_swap(int *x, int *y) {
+        *y = *x ^ *y;  // Step 1
+        *x = *x ^ *y;  // Step 2
+        *y = *x ^ *y;  // Step 3
+    }
+
+    Note: This method doesn't require a third placedholder :D
+ 
+    Fill in the table as the variables traverse the function:
+
+    Step     *x     *y 
+   --------------------
+   Initial    a      b
+   Step 1
+   Step 2
+   Step 3
+
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+###############
+   "Answers"
+###############
+
+    Step     *x                  *y  
+   ---------------------------------
+   Initial    a                   b  
+   Step 1     a                   (a ^ b)    
+   Step 2     a ^ (a ^ b)         (a ^ b) 
+   Step 3     a ^ (a ^ b)         (a ^ b) ^ (a ^ (a ^ b)
+
+###############
+ "Explanation"
+###############
+
+   Example: a = 0101
+            b = 0011
+
+    Step   x-bin  y-bin
+   ---------------------
+   Initial 0101   0011  
+   Step 1  0101   0110
+   Step 2  0011   0110
+   Step 3  0011   0101
+
+   a ^ (a ^ b):
+   0101 ^ ( 0101 ^ 0110)
+   0101 ^ ( 0011)
+   0110
+
+   ( a   ^   b ) ^ ( a   ^ ( a   ^   b )
+   (0101 ^ 0011) ^ (0101 ^ (0101 ^ 0011)
+           0110  ^ (0101 ^ (0110)
+           0110  ^ 0011
+           0101
+
+  - XOR Binary Vector Reversal
+    * XOR does not directly reverse a string; instead, it provides a bitmask of the difference between the two strings.
+    * If you do another XOR with either a or b, you will end up with the opposite variable
+    * This happens because you are saying, `only change this if it is different` (because XOR only takes different bits!)
+    * So if A had a 1 and B had a 0, your bitmask would be 1; then, 1^1 = 0, 1^0 = 1
