@@ -117,3 +117,9 @@
   "2.1.3 Addressing and Byte Ordering"
   - "Big-Endian" and "Little-Endian"  are not fully backwards; instead, "the bytes themselves are switched", meaning within the byte, it still reads 01234567, not 76543210!
   - Due to endian-ness, abusing casts and unions in C are highly discouraged in application programming, but are highly useful in systems programming
+
+  - "XOR Binary Vector Reversal"
+    * XOR does not directly reverse a string; instead, it provides a bitmask of the difference between the two strings.
+    * If you do another XOR with either a or b, you will end up with the opposite variable
+    * This happens because you are saying, `only change this if it is different` (because XOR only takes different bits!)
+    * So if A had a 1 and B had a 0, your bitmask would be 1; then, 1^1 = 0, 1^0 = 1

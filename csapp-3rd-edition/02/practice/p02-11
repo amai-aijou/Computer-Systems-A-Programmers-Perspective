@@ -1,0 +1,43 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-11 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Fri Nov 27 07:02:50 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem x.x"
+    Using inplace_swap from 2.10 (added below for convenience),
+    we write a function to reverse array elements:
+
+    void inplace_swap(int *x, int *y) {
+        *y = *x ^ *y;  // Step 1
+        *x = *x ^ *y;  // Step 2
+        *y = *x ^ *y;  // Step 3
+    }
+
+    void reverse_array(int a[], int cnt) {
+        int first, last;
+        for (first = 0; last = cnt-1;
+             first <= last;
+             first++,last--)
+             inplace_swap(&a[first], &a[last]);
+    }
+
+    Running this on array a = {1,2,3,4}, it works as expected.
+    However, a = {1,2,3,4,5} returns a = {5,4,0,2,1}.
+    This occurs for every array with an odd number of members
+
+    A. For an array with cnt = 2k + 1, what are the values of 
+       "first" and "last" during the final iteration?
+
+    B. Why does inplace_swap() set the array element to 0?
+
+    C. Modify the code to prevent this problem!
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+###############
+   "Answers"
+###############
+
