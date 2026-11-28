@@ -1,0 +1,64 @@
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                    ❤︎︎࣪    P R A C T I C E    ❤︎︎࣪    				 
+   ❤︎︎࣪ Name: p02-9 - CSAPP
+   ❤︎︎࣪ Author: amai-aijou
+   ❤︎︎࣪ Date: Fri Nov 27 05:15:35 PM CST 2026
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+# ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+    "Practice Problem 2.9"
+    Consider this simplified RGB color table (instead of 255/255/255, it is 1/1/1)    
+
+    R  G  B  Color
+   ----------------
+    0  0  0  Black
+    0  0  1  Blue
+    0  1  0  Green
+    0  1  1  Cyan
+    1  0  0  Red
+    1  0  1  Magenta
+    1  1  0  Yellow
+    1  1  1  White
+
+    Each string represents a bit vector of length 3. Let's do some Boolean ops!
+   
+    A. Complement can be reached by flipping to the opposite (~, or ^ with all 1s)
+    
+    B. Describe each operation's impact on the color:
+
+       Blue   |  Green   =
+       Yellow &  Cyan    =
+       Red    ^  Magenta =
+
+# ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+###############
+   "Answers"
+###############
+
+
+    A. Complement can be reached by flipping to the opposite (~, or ^ with all 1s)
+    
+    R  G  B  Color  ~Complement   Color
+   --------------------------------------
+    0  0  0  Black    1  1  1     White
+    0  0  1  Blue     1  1  0     Yellow
+    0  1  0  Green    1  0  1     Magenta
+    0  1  1  Cyan     1  0  0     Red
+    1  0  0  Red      0  1  1     Cyan
+    1  0  1  Magenta  0  1  0     Green
+    1  1  0  Yellow   0  0  1     Blue
+    1  1  1  White    0  0  0     Black
+
+###############
+
+    B. Describe each operation's impact on the color:
+
+       Blue   |  Green   = Cyan
+       Yellow &  Cyan    = Green
+       Red    ^  Magenta = Blue
+
+      Refresher:  |  =  OR
+                  &  =  AND
+                  ^  =  XOR
+                  ~  =  NOT
